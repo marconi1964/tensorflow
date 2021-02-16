@@ -15,7 +15,7 @@ limitations under the License.
 
 #include "tensorflow/lite/micro/examples/hello_world/main_functions.h"
 
-#include "tensorflow/lite/micro/all_ops_resolver.h"
+// #include "tensorflow/lite/micro/all_ops_resolver.h"   // removed by Marconi
 #include "tensorflow/lite/micro/examples/hello_world/constants.h"
 #include "tensorflow/lite/micro/examples/hello_world/model.h"
 #include "tensorflow/lite/micro/examples/hello_world/output_handler.h"
@@ -23,6 +23,9 @@ limitations under the License.
 #include "tensorflow/lite/micro/micro_interpreter.h"
 #include "tensorflow/lite/micro/system_setup.h"
 #include "tensorflow/lite/schema/schema_generated.h"
+// added by Marconi
+#include "tensorflow/lite/micro/micro_mutable_op_resolver.h"
+
 
 // Globals, used for compatibility with Arduino-style sketches.
 namespace {
@@ -60,11 +63,28 @@ void setup() {
 
   // This pulls in all the operation implementations we need.
   // NOLINTNEXTLINE(runtime-global-variables)
-  static tflite::AllOpsResolver resolver;
+  //
+  // Marconi modified the following, by commenting the AllOpsResolver, and adding OpResolvers 
+  //
+  // static tflite::AllOpsResolver resolver;
+    static tflite::MicroMutableOpResolver<4> micro_op_resolver(error_reporter);
+  if (micro_op_resolver.AddDepthwiseConv2D() != kTfLiteOk) {
+    return;
+  }
+  if (micro_op_resolver.AddFullyConnected() != kTfLiteOk) {
+    return;
+  }
+  if (micro_op_resolver.AddSoftmax() != kTfLiteOk) {
+    return;
+  }
+  if (micro_op_resolver.AddReshape() != kTfLiteOk) {
+    return;
+  }
+
 
   // Build an interpreter to run the model with.
   static tflite::MicroInterpreter static_interpreter(
-      model, resolver, tensor_arena, kTensorArenaSize, error_reporter);
+      model, micro_op_resolver, tensor_arena, kTensorArenaSize, error_reporter);
   interpreter = &static_interpreter;
 
   // Allocate memory from the tensor_arena for the model's tensors.
