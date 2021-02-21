@@ -8,13 +8,23 @@
 ### 1. 下載 Ubuntu 18.04 ISO image 檔案
 - https://releases.ubuntu.com/18.04/
 - 選擇 ubuntu-18.04.5-desktop-amd64.iso 下載, 記住儲存目錄
+<img src="screenshots/VmwarePhoto1.PNG" alt="screenshot1" style="height: 300px">
 
 ### 2. 下載及安裝 VMWare Workstation Player
 - 2.1 下載 VMWare Workstation Player 安裝程式檔案 https://www.vmware.com/products/workstation-player/workstation-player-evaluation.html
+<img src="screenshots/VmwarePhoto0.PNG" alt="screenshot0" style="height: 300px">
 - 2.2 執行 VMWare Workstation Player 安裝程式
-- 安裝完成後, 執行 VMware Workstation Player
-- 2.3 Create a new virtual machine
-- 2.4 點選 'Installer disc image file (iso)', 到儲存 ubuntu-18.04.5-desktop-amd64.iso 的目錄後, 開始安裝
+  - 安裝完成後, 執行 VMware Workstation Player
+- 2.3 Create a new virtual machine. 點選 'Installer disc image file (iso)', 到儲存 ubuntu-18.04.5-desktop-amd64.iso 的目錄後, 開始安裝
+<img src="screenshots/VmwarePhoto2.PNG" alt="screenshot2" style="height: 300px">
+<img src="screenshots/VmwarePhoto3.PNG" alt="screenshot3" style="height: 300px">
+<img src="screenshots/VmwarePhoto4.PNG" alt="screenshot4" style="height: 300px">
+<img src="screenshots/VmwarePhoto5.PNG" alt="screenshot5" style="height: 300px">
+<img src="screenshots/VmwarePhoto6.PNG" alt="screenshot6" style="height: 300px">
+<img src="screenshots/VmwarePhoto7.PNG" alt="screenshot7" style="height: 300px">
+<img src="screenshots/VmwarePhoto8.PNG" alt="screenshot8" style="height: 300px">
+<img src="screenshots/VmwarePhoto9.PNG" alt="screenshot9" style="height: 300px">
+
 
 *** 以上 2 個動作在上課前完成 ***
 

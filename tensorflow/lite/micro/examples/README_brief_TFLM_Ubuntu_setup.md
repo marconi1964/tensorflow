@@ -12,9 +12,8 @@
 ### 2. 下載及安裝 VMWare Workstation Player
 - 2.1 下載 VMWare Workstation Player 安裝程式檔案 https://www.vmware.com/products/workstation-player/workstation-player-evaluation.html
 - 2.2 執行 VMWare Workstation Player 安裝程式
-- 安裝完成後, 執行 VMware Workstation Player
-- 2.3 Create a new virtual machine
-- 2.4 點選 'Installer disc image file (iso)', 到儲存 ubuntu-18.04.5-desktop-amd64.iso 的目錄後, 開始安裝
+  - 安裝完成後, 執行 VMware Workstation Player
+- 2.3 Create a new virtual machine. 點選 'Installer disc image file (iso)', 到儲存 ubuntu-18.04.5-desktop-amd64.iso 的目錄後, 開始安裝
 
 *** 以上 2 個動作在上課前完成 ***
 
