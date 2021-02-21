@@ -28,7 +28,7 @@
 
 *** 以上 2 個動作在上課前完成 ***
 
-### 3. 安裝套件之準備工作
+### 3. 安裝套件之準備工作 (以下步驟 3 - 7 約需時 30 分鐘 )
 - 進入 Ubuntu OS 後, 打開 terminal 檔案
 - 要記得 Ubuntu 的密碼, 執行 sudo 後需要輸入
 
@@ -51,6 +51,7 @@ $ sudo find / -name mbed
 $ vi ~/.bashrc
 # 在 .bashrc 檔案的最後一行 按鍵指令 'a' (append) 加上以下內容, 記得, 不要加上 /mbed
 export PATH=$PATH:/path/to/mbed/you/find
+# 我自己的例子是 export PATH=$PATH:/home/ubuntu/.local/bin
 # 結束後, 按鍵 ':' + wq! 來儲存
 $ source ~/.bashrc
 $ mbed --version     # 測試是否正確執行
