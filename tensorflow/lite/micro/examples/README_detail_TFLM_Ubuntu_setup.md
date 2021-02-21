@@ -52,7 +52,7 @@ $ vi ~/.bashrc
 # 在 .bashrc 檔案的最後一行 按鍵指令 'a' (append) 加上以下內容, 記得, 不要加上 /mbed
 export PATH=$PATH:/path/to/mbed/you/find
 # 我自己的例子是 export PATH=$PATH:/home/ubuntu/.local/bin
-# 結束後, 按鍵 ':' + wq! 來儲存
+# 結束後, 按鍵 ':wq!' 來儲存
 $ source ~/.bashrc
 $ mbed --version     # 測試是否正確執行
 ```
@@ -70,6 +70,14 @@ $ sudo apt update
 
 # 第三步: 安裝 gcc-arm toolchain
 $ sudo apt install -y gcc-arm-embedded
+
+# 設定 mbed 目錄路徑(path)
+$ vi ~/.bashrc
+# 在 .bashrc 檔案的最後一行 按鍵指令 'a' (append) 加上以下內容
+export GCC_ARM_PATH=/usr/bin/arm-none-eabi-gcc
+# 結束後, 按鍵 ':wq!' 來儲存
+$ source ~/.bashrc
+
 # 安裝完成, 測試是否正確執行
 $ gcc --version
 

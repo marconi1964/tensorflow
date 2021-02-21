@@ -41,7 +41,7 @@ $ vi ~/.bashrc
 # 在 .bashrc 檔案的最後一行 按鍵指令 'a' (append) 加上以下內容, 記得, 不要加上 /mbed
 export PATH=$PATH:/path/to/mbed/you/find
 # 我自己的例子是 export PATH=$PATH:/home/ubuntu/.local/bin
-# 結束後, 按鍵 ':' + wq! 來儲存
+# 結束後, 按鍵 ':wq!' 來儲存
 $ source ~/.bashrc
 $ mbed --version     # 測試是否正確執行
 ```
@@ -59,6 +59,14 @@ $ sudo apt update
 
 # 第三步: 安裝 gcc-arm toolchain
 $ sudo apt install -y gcc-arm-embedded
+
+# 設定 mbed 目錄路徑(path)
+$ vi ~/.bashrc
+# 在 .bashrc 檔案的最後一行 按鍵指令 'a' (append) 加上以下內容
+export GCC_ARM_PATH=/usr/bin/arm-none-eabi-gcc
+# 結束後, 按鍵 ':wq!' 來儲存
+$ source ~/.bashrc
+
 # 安裝完成, 測試是否正確執行
 $ gcc --version
 
@@ -87,3 +95,15 @@ $ sudo dpkg -i st-stlink-udev-rules-1.0.2-2-linux-all.deb
   - 也可以用步驟 3 已經安裝好的 cli 指令 screen, screen 是比較炫技的方法, CoolTerm 對不熟 Linux 環境的人比較 friendly
 
 ### 8. 開始執行 TensorFlow Lite for Microcontroller 程式
+
+
+### 參考文件
+- 關於 Make 及 Makefile
+> - [取消 TAGS 程式不受影響](https://github.com/tensorflow/tensorflow/issues/46667#issuecomment-766923481)
+> - [STM32F 選用 OPTIMIZED_KERNEL_DIR=cmsis_nn 來做最佳化](https://github.com/tensorflow/tensorflow/issues/46667#issuecomment-766927681)
+- 英文參考文章
+> - [Build Arm Cortex-M voice assistant with Google TensorFlow Lite](https://developer.arm.com/solutions/machine-learning-on-arm/developer-material/how-to-guides/build-arm-cortex-m-voice-assistant-with-google-tensorflow-lite/single-page)
+> - [CMSIS - Cortex Microcontroller Software Interface Standard](http://www.longlandclan.yi.org/~stuartl/stm32f10x_stdperiph_lib_um/CMSIS_Core.htm)
+> - [STM32F10x Standard Peripherals Library Peripheral’s Drivers Description](http://www.longlandclan.yi.org/~stuartl/stm32f10x_stdperiph_lib_um/Library_Files.html#_cmsis)
+> - [what means about “-DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER” as the flags of arm-none-eabi-gcc?](https://stackoverflow.com/questions/59053389/what-means-about-dstm32f10x-md-duse-stdperiph-driver-as-the-flags-of-arm-non)
+> - [mbed-cli manual installation](https://os.mbed.com/docs/mbed-os/v5.15/tools/manual-installation.html)
