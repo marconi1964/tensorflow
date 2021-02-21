@@ -8,7 +8,6 @@ ifeq ($(TARGET),$(filter $(TARGET),mbed))
     LCD_DISCO_F746NG.lib
   MICRO_SPEECH_SRCS += \
 	tensorflow/lite/micro/examples/micro_speech/disco_f746ng/audio_provider.cc \
-	tensorflow/lite/micro/examples/micro_speech/disco_f746ng/command_responder.cc \
-	tensorflow/lite/micro/examples/micro_speech/disco_f746ng/timer.cc
+	tensorflow/lite/micro/examples/micro_speech/disco_f746ng/command_responder.cc
 
 endif
