@@ -1,5 +1,5 @@
 # Settings for the Discovery STM32F746NG board.
-ifeq ($(TARGET),$(filter $(TARGET),mbed))
+ifeq ($(TARGET),$(filter $(TARGET),disco_f746ng)
 
   micro_speech_MBED_PROJECT_FILES += \
     AUDIO_DISCO_F746NG.lib \
