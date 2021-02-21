@@ -82,7 +82,7 @@ $ sudo apt install -y libc6:i386 libncurses5:i386 libstdc++6:i386
 
 ```
 # clone from tensorflow github
-$ git clone https://github.com/tensorflow/tensorflow.git
+$ git clone -b example https://github.com/marconi1964/tensorflow.git
 ``` 
 
 ### 7. 下載 STM32-F 系列工具箱
