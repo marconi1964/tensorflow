@@ -101,6 +101,7 @@ $ sudo dpkg -i st-stlink-udev-rules-1.0.2-2-linux-all.deb
 - 關於 Make 及 Makefile
 > - [取消 TAGS 程式不受影響](https://github.com/tensorflow/tensorflow/issues/46667#issuecomment-766923481)
 > - [STM32F 選用 OPTIMIZED_KERNEL_DIR=cmsis_nn 來做最佳化](https://github.com/tensorflow/tensorflow/issues/46667#issuecomment-766927681)
+
 - 英文參考文章
 > - [Build Arm Cortex-M voice assistant with Google TensorFlow Lite](https://developer.arm.com/solutions/machine-learning-on-arm/developer-material/how-to-guides/build-arm-cortex-m-voice-assistant-with-google-tensorflow-lite/single-page)
 > - [CMSIS - Cortex Microcontroller Software Interface Standard](http://www.longlandclan.yi.org/~stuartl/stm32f10x_stdperiph_lib_um/CMSIS_Core.htm)
