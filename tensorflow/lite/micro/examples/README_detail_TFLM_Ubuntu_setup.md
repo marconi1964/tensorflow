@@ -10,7 +10,7 @@
 - 選擇 ubuntu-18.04.5-desktop-amd64.iso 下載, 記住儲存目錄
 <img src="screenshots/VmwarePhoto1.PNG" alt="screenshot1" style="height: 200px">
 
-### 2. 下載及安裝 VMWare Workstation Player (預估下載時間： < 1 分鐘/ 操作時間：10 分鐘)
+### 2. 下載及安裝 VMWare Workstation Player (預估下載時間： < 1 分鐘 / 操作時間：10 分鐘)
 - 2.1 下載 VMWare Workstation Player 安裝程式檔案 https://www.vmware.com/products/workstation-player/workstation-player-evaluation.html
 <img src="screenshots/VmwarePhoto0.PNG" alt="screenshot0" style="height: 200px">
 - 2.2 執行 VMWare Workstation Player 安裝程式 
