@@ -103,8 +103,9 @@ $ sudo dpkg -i st-stlink-udev-rules-1.0.2-2-linux-all.deb
 > - [STM32F 選用 OPTIMIZED_KERNEL_DIR=cmsis_nn 來做最佳化](https://github.com/tensorflow/tensorflow/issues/46667#issuecomment-766927681)
 
 - 英文參考文章
+> - [mbed-cli v6.7 installation](https://os.mbed.com/docs/mbed-os/v6.7/build-tools/install-and-set-up.html)
+> - [mbed-cli v5.15 manual installation](https://os.mbed.com/docs/mbed-os/v5.15/tools/manual-installation.html)
 > - [Build Arm Cortex-M voice assistant with Google TensorFlow Lite](https://developer.arm.com/solutions/machine-learning-on-arm/developer-material/how-to-guides/build-arm-cortex-m-voice-assistant-with-google-tensorflow-lite/single-page)
 > - [CMSIS - Cortex Microcontroller Software Interface Standard](http://www.longlandclan.yi.org/~stuartl/stm32f10x_stdperiph_lib_um/CMSIS_Core.htm)
 > - [STM32F10x Standard Peripherals Library Peripheral’s Drivers Description](http://www.longlandclan.yi.org/~stuartl/stm32f10x_stdperiph_lib_um/Library_Files.html#_cmsis)
 > - [what means about “-DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER” as the flags of arm-none-eabi-gcc?](https://stackoverflow.com/questions/59053389/what-means-about-dstm32f10x-md-duse-stdperiph-driver-as-the-flags-of-arm-non)
-> - [mbed-cli manual installation](https://os.mbed.com/docs/mbed-os/v5.15/tools/manual-installation.html)
