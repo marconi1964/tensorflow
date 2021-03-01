@@ -15,5 +15,5 @@ limitations under the License.
 
 #include "tensorflow/lite/micro/examples/hello_world/constants.h"
 
-// A larger number than the default to make the animation smoother
-const int kInferencesPerCycle = 70;
+// This is a small number so that it's easy to read the logs
+const int kInferencesPerCycle = 20;

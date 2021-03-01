@@ -1,4 +1,4 @@
-/* Copyright 2021 marconi1964@yahoo.com All Rights Reserved.
+/* Copyright 2019 The TensorFlow Authors. All Rights Reserved.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -13,23 +13,30 @@ See the License for the specific language governing permissions and
 limitations under the License.
 ==============================================================================*/
 
-#include "mbed.h"
+#include "tensorflow/lite/micro/examples/hello_world/output_handler.h"
+#include "tensorflow/lite/micro/examples/hello_world/constants.h"
 
-// Follows Tensorflow Lite for microcontroller example of HandleOutput
+// added by Marconi
+#include "mbed-os/mbed.h"
+
+// Track whether the function has run at least once
+bool initialized = false;
+PwmOut LED_PWM(PB_4);
+
+// Animates a dot across the screen to represent the current x and y values
 void HandleOutput(tflite::ErrorReporter* error_reporter, float x_value,
                   float y_value) {
   // Do this only once
   if (!initialized) {
-    // set and init PWM
-    PwmOut LED_PWM(PB_3)
-    LED_PWM.period_ms(10);
+    LED_PWM.period(0.001);
     LED_PWM.write(0);
     initialized = true;
   }
 
+  LED_PWM.write((y_value+1.0)/2.0);
+
   // Log the current X and Y values
   TF_LITE_REPORT_ERROR(error_reporter, "x_value: %f, y_value: %f\n", x_value,
                        y_value);
-  LED_PWM.write((y_value+1.0)/2);
-  
+
 }
