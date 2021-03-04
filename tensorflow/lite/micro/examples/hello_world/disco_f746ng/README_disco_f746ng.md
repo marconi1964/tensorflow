@@ -25,7 +25,7 @@ The following instructions will help you build and deploy the sample to the
 [STM32F7 discovery kit](https://os.mbed.com/platforms/ST-Discovery-F746NG/)
 using [ARM Mbed](https://github.com/ARMmbed/mbed-cli).
 
-![Animation on STM32F746](images/animation_on_STM32F746.gif)
+![Animation on STM32F746](../images/animation_on_STM32F746.gif)
 
 我們之前在 Windows 10 上安裝了 VMWare 跟 Ubuntu, 以及相關的套件如下：
 
@@ -63,10 +63,10 @@ tensorflow/lite/micro/tools/make/gen/mbed_cortex-m4_default/prj/hello_world/mbed
 
 # 舊版的資料上其中一個目錄 mbed_cortex-m4 已經被 mbed_cortex-m4_default 取代
 tensorflow/lite/micro/tools/make/gen/mbed_cortex-m4/prj/hello_world/mbed
+
 ```
 
 這目錄下包含所有示範程式的正確檔案結構, 讓 Mbed 可以 'build'
-
 
 Change into the directory and run the following commands, making sure you are
 using Python 2.7.15.
@@ -97,15 +97,17 @@ for filename in glob.glob("mbed-os/tools/profiles/*.json"):
 
 ```
 
-Finally, run the following command to compile:
+最後, 執行以下指令來 compile: 
 
 ```
 $ mbed compile -m DISCO_F746NG -t GCC_ARM
 ```
 
-This should result in a binary at the following path:
+執行 mbed compile 會在以下目錄下產生二進位檔案 mbed.bin:
 
 ```
+# 在 tensorflow/lite/micro/tools/make/gen/mbed_cortex-m4_default/prj/hello_world/mbed 之下
+
 ./BUILD/DISCO_F746NG/GCC_ARM/mbed.bin
 ```
 
@@ -117,9 +119,9 @@ this with the following command:
 cp ./BUILD/DISCO_F746NG/GCC_ARM/mbed.bin /Volumes/DIS_F746NG/
 ```
 
-Copying the file will initiate the flashing process. Once this is complete, you
-should see an animation on the device's screen.
-我們不用 screen 這指令, 我們使用 coolterm 這程式, 按 connect 來連結 disco_f746ng 這板子
+copy 檔案會啟動板子的韌體燒錄, 可以看到板子上的 LED 會紅/綠閃爍. 當燒錄完成後, 可以在 LCD 螢幕上看到程式開始執行的動畫. 
+
+我們不用以下的 screen 這指令, 我們使用 coolterm 這程式, 按 connect 來連結 disco_f746ng 這板子
 
 ```
 screen /dev/tty.usbmodem14403 9600
