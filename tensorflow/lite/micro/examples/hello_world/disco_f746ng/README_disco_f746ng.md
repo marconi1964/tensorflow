@@ -1,18 +1,14 @@
-<!-- mdformat off(b/169948621#comment2) -->
+# Hello World Example (中文版 - STM32 DISCO_F746NG)
 
-# Hello World Example
+參考 tensorflow/tensorflow/lite/micro/examples/hello_world/README.md, 擷取並修改 STM32F746 部份內容
 
-Reference from tensorflow/tensorflow/lite/micro/examples/hello_world/README.md
-
-This example is designed to demonstrate the absolute basics of using [TensorFlow
-Lite for Microcontrollers](https://www.tensorflow.org/lite/microcontrollers).
+This example is designed to demonstrate the absolute basics of using [TensorFlow Lite for Microcontrollers](https://www.tensorflow.org/lite/microcontrollers).
 It includes the full end-to-end workflow of training a model, converting it for
 use with TensorFlow Lite for Microcontrollers for running inference on a
 microcontroller.
 
 The model is trained to replicate a `sine` function and generates a pattern of
-data to either blink LEDs or control an animation, depending on the capabilities
-of the device.
+data to either blink LEDs or control an animation, depending on the capabilities of the device.
 
 ![Animation on STM32F746](../images/animation_on_STM32F746.gif)
 
@@ -31,29 +27,46 @@ using [ARM Mbed](https://github.com/ARMmbed/mbed-cli).
 
 ![Animation on STM32F746](images/animation_on_STM32F746.gif)
 
-Before we begin, you'll need the following:
+我們之前在 Windows 10 上安裝了 VMWare 跟 Ubuntu, 以及相關的套件如下：
 
 - STM32F7 discovery kit board
 - Mini-USB cable
 - ARM Mbed CLI ([installation instructions](https://os.mbed.com/docs/mbed-os/v5.12/tools/installation-and-setup.html))
 - Python 2.7 and pip
 
-Since Mbed requires a special folder structure for projects, we'll first run a
-command to generate a subfolder containing the required source files in this
-structure:
+接下來, 我們再確定一次是否已經下載 tensorflow
 
 ```
-make -f tensorflow/lite/micro/tools/make/Makefile TARGET=mbed TAGS="CMSIS disco_f746ng" generate_hello_world_mbed_project
+$ git clone -b example --depth 1 https://github.com/marconi1964/tensorflow.git
+
+# 說明：
+# -b example 下載我修改 tensorflow 後的 example 分支 (branch)
+# --depth 1 只下載最新的版本, 不下載歷史修改資料, 以節省下載時間
 ```
 
-This will result in the creation of a new folder:
+Mbed 針對開發案需要特別的檔案結構安排, 所以需要執行 make 指令來建立子目錄及所需的目錄結構及原始檔案
 
 ```
+$ cd tensforflow
+
+# 以下是 tensorflow 原始指令, 但是新版已經拿掉 TAGS 參數支援, 以下指令會產生錯誤訊息
+$ make -f tensorflow/lite/micro/tools/make/Makefile TARGET=mbed TAGS="CMSIS disco_f746ng" generate_hello_world_mbed_project
+
+# 修改如下, 將 TAGS 參數拿掉, 我自行增加另一個參數 (ARM）來帶入 disco_f746ng 的 lib, 關於 ARM 參數的帶入, 請參考檔案 examples/hello_world/disco_f746ng/Makefile.inc  
+$ make -f tensorflow/lite/micro/tools/make/Makefile TARGET=mbed ARM=disco_f746ng generate_hello_world_mbed_project
+```
+
+make 指令會建立新的目錄:
+
+```
+tensorflow/lite/micro/tools/make/gen/mbed_cortex-m4_default/prj/hello_world/mbed
+
+# 舊版的資料上其中一個目錄 mbed_cortex-m4 已經被 mbed_cortex-m4_default 取代
 tensorflow/lite/micro/tools/make/gen/mbed_cortex-m4/prj/hello_world/mbed
 ```
 
-This folder contains all of the example's dependencies structured in the correct
-way for Mbed to be able to build it.
+這目錄下包含所有示範程式的正確檔案結構, 讓 Mbed 可以 'build'
+
 
 Change into the directory and run the following commands, making sure you are
 using Python 2.7.15.
@@ -61,15 +74,17 @@ using Python 2.7.15.
 First, tell Mbed that the current directory is the root of an Mbed project:
 
 ```
-mbed config root .
+$ cd tensorflow/lite/micro/tools/make/gen/mbed_cortex-m4_default/prj/hello_world/mbed
+$ mbed config root .
 ```
 
 Next, tell Mbed to download the dependencies and prepare to build:
 
 ```
-mbed deploy
+$ mbed deploy
 ```
 
+以下這段已經不適用新版程式, 可以跳過
 By default, Mbed will build the project using C++98. However, TensorFlow Lite
 requires C++11. Run the following Python snippet to modify the Mbed
 configuration files so that it uses C++11:
@@ -85,7 +100,7 @@ for filename in glob.glob("mbed-os/tools/profiles/*.json"):
 Finally, run the following command to compile:
 
 ```
-mbed compile -m DISCO_F746NG -t GCC_ARM
+$ mbed compile -m DISCO_F746NG -t GCC_ARM
 ```
 
 This should result in a binary at the following path:
@@ -96,6 +111,7 @@ This should result in a binary at the following path:
 
 To deploy, plug in your STM board and copy the file to it. On MacOS, you can do
 this with the following command:
+或是直接在檔案管理員, 將 mbed.bin 檔案搬到 DIS_F746NG
 
 ```
 cp ./BUILD/DISCO_F746NG/GCC_ARM/mbed.bin /Volumes/DIS_F746NG/
@@ -103,7 +119,7 @@ cp ./BUILD/DISCO_F746NG/GCC_ARM/mbed.bin /Volumes/DIS_F746NG/
 
 Copying the file will initiate the flashing process. Once this is complete, you
 should see an animation on the device's screen.
-
+我們不用 screen 這指令, 我們使用 coolterm 這程式, 按 connect 來連結 disco_f746ng 這板子
 
 ```
 screen /dev/tty.usbmodem14403 9600
