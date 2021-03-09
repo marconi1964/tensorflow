@@ -1,6 +1,5 @@
 # Settings for the Discovery STM32F746NG board.
-# ifeq ($(TARGET),$(filter $(TARGET), disco_f746ng))   # original
-ifneq ($(filter $(ARM), disco_f746ng),)
+ifneq ($(filter disco_f746ng, $(ALL_TAGS)),)
 
   hello_world_MBED_PROJECT_FILES += \
     BSP_DISCO_F746NG.lib \
