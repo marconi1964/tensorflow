@@ -52,7 +52,7 @@ $ cd tensforflow
 # 以下是 tensorflow 原始指令, 但是新版已經拿掉 TAGS 參數支援, 以下指令會產生錯誤訊息
 $ make -f tensorflow/lite/micro/tools/make/Makefile TARGET=mbed TAGS="CMSIS disco_f746ng" generate_hello_world_mbed_project
 
-# 修改如下, 將 TAGS 參數拿掉, 我自行增加另一個參數 (ARM）來帶入 disco_f746ng 的 lib, 關於 ARM 參數的帶入, 請參考檔案 examples/hello_world/disco_f746ng/Makefile.inc  
+# 修改如下, 將 TAGS 參數拿掉, 改成另一個參數 (ALL_TAGS）來帶入 disco_f746ng 的 lib, 關於 ARM 參數的帶入, 請參考檔案 examples/hello_world/disco_f746ng/Makefile.inc  
 $ make -f tensorflow/lite/micro/tools/make/Makefile TARGET=mbed ALL_TAGS=disco_f746ng generate_hello_world_mbed_project
 ```
 
