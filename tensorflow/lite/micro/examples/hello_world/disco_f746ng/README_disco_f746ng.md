@@ -158,6 +158,88 @@ x_value: 1.1843798*2^2, y_value: -1.9542645*2^-1
 To stop viewing the debug output with `screen`, hit `Ctrl+A`, immediately
 followed by the `K` key, then hit the `Y` key.
 
+** Error message **
+
+```
+
+++ MbedOS Fault Handler ++
+
+FaultType: HardFault
+
+Context:
+R0: 7C
+R1: 8
+R2: FFDB4437
+R3: 1
+R4: 20002D58
+R5: 34
+R6: A
+R7: FFDB4437
+R8: 0
+R9: 72
+R10: 8
+R11: 68
+R12: 34
+SP   : 2004FF8C
+LR   : 800051B
+PC   : 8000472
+xPSR : 1000200
+PSP  : 0
+MSP  : 2004FF20
+CPUID: 410FC271
+HFSR : 40000000
+MMFSR: 0
+BFSR : 4
+UFSR : 0
+DFSR : 9
+AFSR : 0
+Mode : Thread
+Priv : Privileged
+Stack: MSP
+
+-- MbedOS Fault Handler --
+
+
+
+++ MbedOS Error Info ++
+Error Status: 0x80FF013D Code: 317 Module: 255
+Error Message: Fault exception
+Location: 0x8000472
+Error Value: 0x20002E34
+For more info, visit: https://mbed.com/s/error?error=0x80FF013D&tgt=DISCO_F746NG
+-- MbedOS Error Info --
+
+```
+
+After checking https://mbed.com/s/error?error=0x80FF013D&tgt=DISCO_F746NG and input the error code 0x80FF013D into the web, and it produce the following info
+
+```
+
+Error Decoder
+0x80FF013D
+Type:
+System
+Module
+Unknown module
+Error Code
+HardFault exception
+Cortex-M HardFault exception has occurred. Please see https://os.mbed.com/docs/latest/tutorials/analyzing-mbed-os-crash-dump.html for more info.
+
+```
+
+Further check the link https://os.mbed.com/docs/latest/tutorials/analyzing-mbed-os-crash-dump.html and finds
+
+
+```
+The following Cortex-M fault exceptions trigger the Mbed OS fault exception handler.
+
+    MemManage Exception - Memory accesses that violate the setup in the MPU and certain illegal memory accesses trigger memory management faults.
+    BusFault Exception - When an error response is received during a transfer on the AHB interfaces, it produces bus faults.
+    UsageFault Exception - Division by zero, unaligned accesses and trying to execute coprocessor instructions can cause usage faults.
+    HardFault Exception - Triggered on all fault conditions or if the corresponding fault handler (one of the above) is not enabled.
+
+```
+
 ## Run the tests on a development machine
 
 To compile and test this example on a desktop Linux or macOS machine, first
