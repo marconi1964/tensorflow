@@ -44,6 +44,15 @@ $ git clone -b example --depth 1 https://github.com/marconi1964/tensorflow.git
 # --depth 1 只下載最新的版本, 不下載歷史修改資料, 以節省下載時間
 ```
 
+將上一章在 colab 訓練完成的 g_model[] 複製貼上到 model.cc
+
+```
+# 先確定 g_model_len 與 g_model 這兩個參數
+# 查看 tensorflow/lite/micro/examples/hello_world/model.h 的參數名稱是否相符
+# 將 colab 的 g_model[] 內容複製貼上到 tensorflow/lite/micro/examples/hello_world/model.cc 的 g_model[] 上
+# g_model_len 的值, 不管是在 colab 或是 model.cc 都是 2488, 不需要修改
+```
+
 Mbed 針對開發案需要特別的檔案結構安排, 所以需要執行 make 指令來建立子目錄及所需的目錄結構及原始檔案
 
 ```
