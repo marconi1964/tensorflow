@@ -53,7 +53,7 @@ $ cd tensforflow
 $ make -f tensorflow/lite/micro/tools/make/Makefile TARGET=mbed TAGS="CMSIS disco_f746ng" generate_hello_world_mbed_project
 
 # 修改如下, 將 TAGS 參數拿掉, 我自行增加另一個參數 (ARM）來帶入 disco_f746ng 的 lib, 關於 ARM 參數的帶入, 請參考檔案 examples/hello_world/disco_f746ng/Makefile.inc  
-$ make -f tensorflow/lite/micro/tools/make/Makefile TARGET=mbed ARM=disco_f746ng generate_hello_world_mbed_project
+$ make -f tensorflow/lite/micro/tools/make/Makefile TARGET=mbed ALL_TAGS=disco_f746ng generate_hello_world_mbed_project
 ```
 
 make 指令會建立新的目錄:
