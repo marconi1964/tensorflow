@@ -161,6 +161,40 @@ followed by the `K` key, then hit the `Y` key.
 ** Error message **
 
 ```
+x_value: 1.0*2^-127, y_value: 1.0*2^-127
+
+x_value: 1.4361557*2^-4, y_value: 1.7621826*2^-4
+
+x_value: 1.4361557*2^-3, y_value: 1.8977352*2^-3
+
+x_value: 1.0771168*2^-2, y_value: 1.389413*2^-2
+
+x_value: 1.4361557*2^-2, y_value: 1.5588537*2^-2
+
+x_value: 1.7951952*2^-2, y_value: 1.7960706*2^-2
+
+x_value: 1.0771168*2^-1, y_value: 1.965511*2^-2
+
+x_value: 1.2566366*2^-1, y_value: 1.1183078*2^-1
+
+x_value: 1.4361557*2^-1, y_value: 1.3724688*2^-1
+
+x_value: 1.6156756*2^-1, y_value: 1.4910772*2^-1
+
+x_value: 1.7951952*2^-1, y_value: 1.6605182*2^-1
+
+x_value: 1.9747147*2^-1, y_value: 1.7791265*2^-1
+
+x_value: 1.0771168*2^0, y_value: 1.7791265*2^-1
+
+x_value: 1.1668766*2^0, y_value: 1.8977352*2^-1
+
+x_value: 1.2566366*2^0, y_value: 1.9316229*2^-1
+
+x_value: 1.3463962*2^0, y_value: 1.965511*2^-1
+
+x_value: 1.4361557*2^0, y_value: 1.0166438*2^0
+
 
 ++ MbedOS Fault Handler ++
 
